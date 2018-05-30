@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :person, dependent: :destroy
-    has_many :planet, dependent: :destroy
-    has_many :starship, dependent: :destroy
-    has_many :vehicle, dependent: :destroy
+    has_many :Person, dependent: :destroy
+    has_many :Planet, dependent: :destroy
+    has_many :Starship, dependent: :destroy
+    has_many :Vehicle, dependent: :destroy
 end
