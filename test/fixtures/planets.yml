@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rotation_period: MyString
+  orbital_period: MyString
+  climate: MyString
+
+two:
+  name: MyString
+  rotation_period: MyString
+  orbital_period: MyString
+  climate: MyString
