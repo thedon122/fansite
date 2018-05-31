@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 User.create(name: 'test', username: 'alsotest', password:'does_not_matter')
+Person.create(name: 'test', birth_year: '1967', gender: 'male', species: 'test')
 puts 'seeded page'

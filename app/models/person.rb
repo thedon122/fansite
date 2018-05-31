@@ -1,3 +1,3 @@
 class Person < ApplicationRecord
-    has_one :User
+    has_and_belongs_to_many :User
 end
