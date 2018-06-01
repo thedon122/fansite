@@ -11,8 +11,16 @@ font-weight: bold;
 const Body = styled.div`
 padding: 0% 1.5% 1% 1.5%;
 background-image: url("https://mmoexaminer.com/wp-content/uploads/2017/10/sw352356.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100%;
 border-style: solid;
-border-width: 1px;`
+border-width: 1px;
+height: 90vh
+width: 90vw;`
+const Cardholder = styled.div`
+background-color: gray;
+`
 class HomePage extends Component {
     render() {
         return (
@@ -22,9 +30,11 @@ class HomePage extends Component {
                 </Header>
                 <Body>
                     <Col l={12} m={12} s={12}>
-                        <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='#'>This is a link</a>]}>
+                    <Cardholder>
+                        <Card className='blue-grey darken-1' textClassName='white-text' title='Star Wars site' actions={[<a href='#'>This is a link</a>]}>
                             I am a very simple card.
-    </Card>
+                        </Card>
+                        </Cardholder>
                     </Col>
                 </Body>
             </div>
