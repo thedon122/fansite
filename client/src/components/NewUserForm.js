@@ -49,9 +49,9 @@ class NewUserForm extends Component {
                 <FormBody>
                     <form>
                         
-                            <input name="name" onChange={this.handleChange('name')} s={8} label="Name" />
-                            <input name="username" onChange={this.handleChange('username')} s={8} label="User Name" />
-                            <input name="password" onChange={this.handleChange('password')} s={8} label="Password" />
+                            <input name="name" onChange={this.handleChange('name')} l={6} s={8} label="Name" />
+                            <input name="username" onChange={this.handleChange('username')} m={6} s={8} label="User Name" />
+                            <input name="password" onChange={this.handleChange('password')} l={6} s={8} label="Password" />
                        
                     </form>
                 </FormBody>
