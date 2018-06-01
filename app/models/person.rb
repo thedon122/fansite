@@ -1,3 +1,5 @@
 class Person < ApplicationRecord
-    has_and_belongs_to_many :User
+    has_many :favorites, dependent: :destroy
+    has_many :users, through: :favorite
+
 end
