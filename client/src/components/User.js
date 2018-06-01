@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import NewUserForm from './NewUserForm'
 
 class User extends Component {
     state = {
@@ -28,6 +29,7 @@ class User extends Component {
         return (
             <div>
                 <input/>
+                <NewUserForm/>
             </div>
         )
     }
