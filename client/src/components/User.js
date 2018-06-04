@@ -19,7 +19,7 @@ class User extends Component {
     getAllUsers = () => {
         axios.get(`/users`)
             .then(res => {
-                this.setState({ users: res.data })
+                this.setState({ users:res.data })
                 console.log("Saving users to state", res.data)
             })
             .catch(err => {
@@ -31,7 +31,7 @@ class User extends Component {
         const userLinks = this.state.users.map((user, i) => {
             return (
                 <div>
-                    <Link key={i} to={`/user/${user._id}`}>
+                    <Link key={i} to={`/users/${user._id}`}>
                     <Card >
                         <h2>{this.state.user.name}</h2>
                     </Card>
