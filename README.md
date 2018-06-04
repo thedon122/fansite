@@ -12,13 +12,13 @@ Json <br/>
 SWAPI <br/>
 
 ERD: <br/>
-<a herf="https://docs.google.com/document/d/1hLXrdJD6D-2HSkvFT2PQcAvyUaNAID0TpZhg9ChTCw0/edit"> ERD link</a><br/>
+<a href="https://docs.google.com/document/d/1hLXrdJD6D-2HSkvFT2PQcAvyUaNAID0TpZhg9ChTCw0/edit"> ERD link</a> <br/>
 
 Wireframe:<br/>
-<a herf ="https://docs.google.com/document/d/10YN2frzIV_X3J2dwaMNf-cBfe-LT60FFn2twICrPtYM/edit">Wireframe link</a><br/>
+<a href ="https://docs.google.com/document/d/10YN2frzIV_X3J2dwaMNf-cBfe-LT60FFn2twICrPtYM/edit">Wireframe link</a><br/>
 
 User stories:<br/>
-<a herf="https://trello.com/b/LbjYurS2/fansite">Trello link</a><br/>
+<a href="https://trello.com/b/LbjYurS2/fansite">Trello link</a><br/>
 
 heroku:<br/>
-<a herf="https://fansitedw.herokuapp.com/">Heroku link</a>>
+<a href="https://fansitedw.herokuapp.com/">Heroku link</a>
