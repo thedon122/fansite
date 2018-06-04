@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import NewUserForm from './NewUserForm'
-import Card from 'react-materialize'
+import {Card, Col} from 'react-materialize'
 
 class User extends Component {
     state = {
@@ -30,11 +30,13 @@ class User extends Component {
     render() {
         const userLinks = this.state.users.map((user, i) => {
             return (
-                <div>
-                    <Link key={i} to={`/users/${user._id}`}>
+                <div key={i}>
+                    <Link key={i} to={`users/${user.id}`}>
+                    <Col s={4}>
                     <Card >
-                        <h2>{this.state.user.name}</h2>
+                        {user.name}
                     </Card>
+                    </Col>
                     </Link>
                 </div>
             )

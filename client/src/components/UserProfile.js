@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {Card} from 'react-materialize'
 
 class UserProfile extends Component {
     state = {
@@ -15,7 +16,7 @@ class UserProfile extends Component {
     getCurrentUser = () => {
         const userId = this.props.match.params.userId
         console.log("eventId from UserProfile component: ", userId)
-        axios.get('users/${userId}')
+        axios.get(`users/{userId}`)
         .then(res=> {
             this.setState({
                 user: res.data
@@ -36,6 +37,7 @@ class UserProfile extends Component {
     render() {
         return(
             <div>
+                work
             </div>
         )
     }

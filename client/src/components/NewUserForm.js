@@ -22,24 +22,27 @@ class NewUserForm extends Component {
             password: ''
         }
     }
-    handleChange = name => event => {
+    handleChange = (event) => {
         const name = event.target.name
-        const newState = { ...this.state.user }
+        const newState = { ...this.state }
         newState[name] = event.target.value
-        this.setState(newState)
         console.log(newState)
+        this.setState(newState)
+        console.log(this.state.user)
     };
 
-    creatNewUser = () => {
-        axios.post(`/users`, { users: this.state.user })
+    creatNewUser = (event) => {
+        event.preventDefault()
+        console.log(this.state.user)
+        axios.post(`/users`, { user: this.state.user })
             .then((res) => {
                 console.log("RESPONSE FROM NEW User", res.data)
                 this.setState({
                     users: res.data.user
-                })
-                    .catch((error) => {
-                        console.log(error)
-                    })
+                }) 
+            })
+            .catch((error) => {
+                console.log(error)
             })
     }
 
@@ -48,13 +51,13 @@ class NewUserForm extends Component {
             <div>
                 <Header><h2>New Post Form</h2></Header>
                 <FormBody>
-                    <form action= {this.creatNewUser()}>
+                    <form onSubmit={this.creatNewUser}>
                     <Row>
-                            <Input name="name" onChange={this.handleChange('name')} l={6} s={8} label="Name" />
-                            <Input name="username" onChange={this.handleChange('username')} l={6} s={8} label="User Name" />
-                            <Input name="password" onChange={this.handleChange('password')} l={6} s={8} label="Password" />
+                            <Input name="name" onChange={this.handleChange} l={6} s={8} label="Name" />
+                            <Input name="username" onChange={this.handleChange} l={6} s={8} label="User Name" />
+                            <Input name="password" onChange={this.handleChange} l={6} s={8} label="Password" />
                             </Row>
-                            <Button input type="submit" waves='light'>Submit</Button>
+                            <Button type="submit" waves='light'>Submit</Button>
                     
                     </form>
                 </FormBody>

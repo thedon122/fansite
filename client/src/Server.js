@@ -12,7 +12,7 @@ class Server extends Component {
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user" component={User}/>
-          <Route exact path="/user/:userId" component={UserProfile}/>
+          <Route exact path="/user/${:userId}" component={UserProfile}/>
         </Switch>
       </div>
       </Router>
