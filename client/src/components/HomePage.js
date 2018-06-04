@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { Card, Col } from 'react-materialize'
+import {Link} from 'react-router-dom'
 
 const Header = styled.div`
 padding: 3% 3% 3% 3%;
@@ -19,7 +20,6 @@ border-width: 1px;
 height: 90vh
 width: 90vw;`
 const Cardholder = styled.div`
-background-color: gray;
 width: 20vw;
 `
 class HomePage extends Component {
@@ -32,8 +32,8 @@ class HomePage extends Component {
                 <Body>
                     <Col l={6} m={8} s={10}>
                     <Cardholder>
-                        <Card className='blue-grey darken-1' textClassName='white-text' title='Star Wars site' actions={[<a href='#'>This is a link</a>]}>
-                            I am a very simple card.
+                        <Card className='blue-grey darken-1' textClassName='white-text' title='Star Wars site' actions={[<Link to={`/user`}>Users</Link>]}>
+                            Welcome to the darkside.
                         </Card>
                         </Cardholder>
                     </Col>

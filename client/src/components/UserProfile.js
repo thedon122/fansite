@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {Card, Button} from 'react-materialize'
+import {Card, Button, Input} from 'react-materialize'
 
 class UserProfile extends Component {
     state = {
@@ -28,6 +28,14 @@ class UserProfile extends Component {
                 console.error(err)
         })
     }
+    handleChange = (event) => {
+        const name = event.target.name
+        const char = {...this.state.StarWarsInput}
+        char.name= event.target.value
+        console.log(name)
+        this.setState({StarWarsInput: char})
+        console.log(this.state.StarWarsInput)
+    }
     getStatWarsChar = () => {
         axios.get()
     }
@@ -42,7 +50,8 @@ class UserProfile extends Component {
     render() {
         return(
             <div>
-                Search Star Wars Char
+                Search for Star Wars characters: <br/>
+                <Input name="swchar"/>
                 Name: {this.state.user.name}<br/>
                 <Button onClick={this.deleteUser}>deleteUser</Button>
             </div>
