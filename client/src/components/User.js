@@ -17,8 +17,8 @@ class User extends Component {
     getAllUsers= () => {
         axios.get(`/users`)
         .then(res =>{
-            console.log("Saving users to state", res.data)
             this.setState({ users: res.data })
+            console.log("Saving users to state", res.data)
         })
         .catch(err => {
             console.error(err)

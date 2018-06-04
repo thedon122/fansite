@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { form } from 'react-materialize'
+import { form, Button } from 'react-materialize'
 import axios from 'axios'
 
 const Header = styled.div`
@@ -23,7 +23,7 @@ class NewUserForm extends Component {
     }
     handleChange = name => event => {
         const name = event.target.name
-        const newState = { ...this.state }
+        const newState = { ...this.state.user }
         newState[name] = event.target.value
         this.setState(newState)
         console.log(newState)
@@ -47,12 +47,11 @@ class NewUserForm extends Component {
             <div>
                 <Header><h2>New Post Form</h2></Header>
                 <FormBody>
-                    <form>
-                        
+                    <form action= {this.creatNewUser()}>
                             <input name="name" onChange={this.handleChange('name')} l={6} s={8} label="Name" />
                             <input name="username" onChange={this.handleChange('username')} m={6} s={8} label="User Name" />
                             <input name="password" onChange={this.handleChange('password')} l={6} s={8} label="Password" />
-                       
+                            <Button input type="submit" waves='light'>Submit</Button>
                     </form>
                 </FormBody>
             </div>
