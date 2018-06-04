@@ -22,12 +22,13 @@ class NewUserForm extends Component {
             password: ''
         }
     }
+
     handleChange = (event) => {
         const name = event.target.name
-        const newState = { ...this.state }
-        newState[name] = event.target.value
-        console.log(newState)
-        this.setState(newState)
+        const user = { ...this.state.user }
+        user[name] = event.target.value
+        console.log(user)
+        this.setState({user: user})
         console.log(this.state.user)
     };
 
@@ -39,7 +40,7 @@ class NewUserForm extends Component {
                 console.log("RESPONSE FROM NEW User", res.data)
                 this.setState({
                     users: res.data.user
-                }) 
+                })
             })
             .catch((error) => {
                 console.log(error)
@@ -52,13 +53,13 @@ class NewUserForm extends Component {
                 <Header><h2>New Post Form</h2></Header>
                 <FormBody>
                     <form onSubmit={this.creatNewUser}>
-                    <Row>
+                        <Row>
                             <Input name="name" onChange={this.handleChange} l={6} s={8} label="Name" />
                             <Input name="username" onChange={this.handleChange} l={6} s={8} label="User Name" />
                             <Input name="password" onChange={this.handleChange} l={6} s={8} label="Password" />
-                            </Row>
-                            <Button type="submit" waves='light'>Submit</Button>
-                    
+                        </Row>
+                        <Button type="submit" waves='light'>Submit</Button>
+
                     </form>
                 </FormBody>
             </div>
