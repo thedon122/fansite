@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import NewUserForm from './NewUserForm'
+import Card from 'react-materialize'
 
 class User extends Component {
     state = {
@@ -11,26 +13,38 @@ class User extends Component {
             password: ''
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         this.getAllUsers()
     }
-    getAllUsers= () => {
+    getAllUsers = () => {
         axios.get(`/users`)
-        .then(res =>{
-            this.setState({ users: res.data })
-            console.log("Saving users to state", res.data)
-        })
-        .catch(err => {
-            console.error(err)
-        })
+            .then(res => {
+                this.setState({ users: res.data })
+                console.log("Saving users to state", res.data)
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
-    
+
     render() {
-        return (
+        const userLinks = this.state.users.map((user, i) => {
+            return (
+                <div>
+                    <Link key={i} to={`/user/${user._id}`}>
+                    <Card >
+                        <h2>{this.state.user.name}</h2>
+                    </Card>
+                    </Link>
+                </div>
+            )
+        })
+    
+    return(
             <div>
-                <input/>
-                <NewUserForm/>
-            </div>
+    {userLinks}
+    <NewUserForm />
+            </div >
         )
     }
 }

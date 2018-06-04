@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { form, Button } from 'react-materialize'
+import { Input, Button } from 'react-materialize'
 import axios from 'axios'
+import Row from 'react-materialize/lib/Row';
 
 const Header = styled.div`
-padding: 20px;
+padding: 10px;
 margin: auto;
 text-align: center;`
 
 const FormBody = styled.div`
-padding: 40px;
+padding: 20px;
 margin: auto;
 text-align: center;
 `
@@ -48,10 +49,13 @@ class NewUserForm extends Component {
                 <Header><h2>New Post Form</h2></Header>
                 <FormBody>
                     <form action= {this.creatNewUser()}>
-                            <input name="name" onChange={this.handleChange('name')} l={6} s={8} label="Name" />
-                            <input name="username" onChange={this.handleChange('username')} m={6} s={8} label="User Name" />
-                            <input name="password" onChange={this.handleChange('password')} l={6} s={8} label="Password" />
+                    <Row>
+                            <Input name="name" onChange={this.handleChange('name')} l={6} s={8} label="Name" />
+                            <Input name="username" onChange={this.handleChange('username')} l={6} s={8} label="User Name" />
+                            <Input name="password" onChange={this.handleChange('password')} l={6} s={8} label="Password" />
+                            </Row>
                             <Button input type="submit" waves='light'>Submit</Button>
+                    
                     </form>
                 </FormBody>
             </div>
